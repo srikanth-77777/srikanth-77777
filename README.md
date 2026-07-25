@@ -3,13 +3,14 @@
 ###
 
 <div data-importer="stats" align="center">
-  <img src="https://raw.githubusercontent.com/srikanth-77777/srikanth-77777/stats-output/stats.svg?hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph" /> <br>
-  <img src="https://raw.githubusercontent.com/srikanth-77777/srikanth-77777/languages-output/languages.svg?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dark&hide_border=false" height="150" alt="languages graph"  />
+  <img src="https://raw.githubusercontent.com/srikanth-77777/srikanth-77777/main/github-metrics.svg" />
+  hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph" /> <br>
+<img src="https://raw.githubusercontent.com/srikanth-77777/srikanth-77777/main/languages.svg" />
 </div>
 
 ###
 
-<img data-importer="image" align="right" height="150" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGR5eTQzbWk3ajl3YzZ2NDE2Mmo4aXA1NDM5czU4ZHQ3anRtY3FlNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b29IZK1dP4aWs/giphy.gif"  />
+<img src="https://raw.githubusercontent.com/srikanth-77777/srikanth-77777/output/github-snake.svg" />
 
 ###
 
