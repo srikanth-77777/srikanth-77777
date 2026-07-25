@@ -1,0 +1,30 @@
+name: Generate Languages
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Languages
+        uses: jstrieb/github-stats@master
+        with:
+          user: srikanth-77777
+          show_languages: true
+
+      - name: Push languages
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git checkout languages-output 2>/dev/null || git checkout -b languages-output
+          cp languages.svg languages.svg
+          git add languages.svg
+          git commit -m "Update languages" || true
+          git push -u origin languages-output
