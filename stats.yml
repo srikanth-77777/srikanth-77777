@@ -1,0 +1,31 @@
+name: Generate Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Generate Stats SVG
+        uses: jstrieb/github-stats@master
+        with:
+          user: srikanth-77777
+          template: paperzeer
+
+      - name: Push to stats-output branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout stats-output || git checkout -b stats-output
+          cp github-stats.svg stats.svg
+          git add stats.svg
+          git commit -m "Generate stats" || exit 0
+          git push origin stats-output
