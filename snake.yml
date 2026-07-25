@@ -1,0 +1,32 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate snake
+        uses: Platane/snk@master
+        with:
+          github_user_name: srikanth-77777
+          outputs: dist/github-snake.svg
+
+      - name: Push snake
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git checkout snake-output 2>/dev/null || git checkout -b snake-output
+          cp dist/github-snake.svg snake.svg
+          git add snake.svg
+          git commit -m "Update snake" || true
+          git push -u origin snake-output
